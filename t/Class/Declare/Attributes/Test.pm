@@ -490,8 +490,7 @@ __EODfN__
 
 		  # attempt to instatiate this package
       __PACKAGE__->require( $dfn )
-		    or die __PACKAGE__ , ": failed to create $pkg:\n\t$@"
-		   and return undef;
+		    or die __PACKAGE__ , ": failed to create $pkg:\n\t$@";
     }
 
 		# define the packages
