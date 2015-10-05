@@ -1,6 +1,9 @@
 Revision history for Perl module Class::Declare::Attributes
 # $Id: Changes 1515 2010-08-22 14:41:53Z ian $
 
+0.09  Mon Oct  5 15:45:32 2015
+  - altered symbol table walk to avoid "undefined behaviour" warning
+
 0.08  Sun Aug 22 15:39:24 2010
   - removed ': locked' attribute from object method & attribute accessors
     as this has been deprecated in newer versions of Perl
