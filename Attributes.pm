@@ -11,7 +11,7 @@ use File::Spec::Functions       qw();
 use base qw( Class::Declare        );
 use vars qw( $VERSION $REVISION    );
 
-    $VERSION      = '0.08';
+    $VERSION      = '0.09';
     $REVISION     = '$Revision: 1515 $';
 
 # need to copy the export symbols from Class::Declare
@@ -155,11 +155,14 @@ sub __init__
     }
 
     # iterate through the symbol tree of this package
-    while ( my ( $name , $sym ) = each %{ $pkg . '::' } ) {
+    my  $pkg_   = $pkg . '::';
+    my  @names  = keys %{ $pkg_ };
+    foreach my $name ( @names ) {
       no warnings 'once';
 
       # if we don't have a normal symbol table entry, then skip
       #   - occasionally we will find a reference here not a GLOB
+      my  $sym  = ${ $pkg_ }{ $name };
                ( ref $sym )                 and next;
 
       # if we don't have a CODE reference then we can't proceed
@@ -173,7 +176,7 @@ sub __init__
         ( @attr )                             or next;
 
       # extract the name of this subroutine
-      my  $glob = $pkg . '::' . $name;
+      my  $glob = $pkg_ . $name;
 
       # if we have strict access checking, then "wrap" this routine
       if ( $strict ) {
