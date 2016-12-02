@@ -11,7 +11,7 @@ use File::Spec::Functions       qw();
 use base qw( Class::Declare        );
 use vars qw( $VERSION $REVISION    );
 
-    $VERSION      = '0.09';
+    $VERSION      = '0.10';
     $REVISION     = '$Revision: 1515 $';
 
 # need to copy the export symbols from Class::Declare
@@ -456,12 +456,12 @@ L<Attribute::Handlers>.
 
 =head1 AUTHOR
 
-Ian Brayshaw, E<lt>ian@onemore.orgE<gt>
+Ian Brayshaw, E<lt>ibb@cpan.orgE<gt>
 
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2003-2010 by Ian Brayshaw. All rights reserved.
+Copyright 2003-2016 by Ian Brayshaw. All rights reserved.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 

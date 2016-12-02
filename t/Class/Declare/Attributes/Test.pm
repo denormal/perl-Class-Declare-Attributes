@@ -878,7 +878,7 @@ L<Class::Declare::Attributes>, L<Test::More>, L<Test::Exception>.
 
 =head1 AUTHOR
 
-Ian Brayshaw, E<lt>ian@onemore.orgE<gt>
+Ian Brayshaw, E<lt>ibb@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 

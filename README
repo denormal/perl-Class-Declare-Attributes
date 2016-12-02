@@ -180,10 +180,10 @@ SEE ALSO
     Class::Declare, attributes, Attribute::Protected, Attribute::Handlers.
 
 AUTHOR
-    Ian Brayshaw, <ian@onemore.org>
+    Ian Brayshaw <ibb@cpan.org>
 
 COPYRIGHT AND LICENSE
-    Copyright 2003-2010 by Ian Brayshaw. All rights reserved.
+    Copyright 2003-2016 by Ian Brayshaw. All rights reserved.
 
     This library is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.
