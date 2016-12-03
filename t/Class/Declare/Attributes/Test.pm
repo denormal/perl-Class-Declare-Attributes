@@ -1,6 +1,3 @@
-#!/usr/bin/perl -w
-# $Id: Test.pm 1515 2010-08-22 14:41:53Z ian $
-
 # generate and execute access permutations
 package Class::Declare::Attributes::Test;
 

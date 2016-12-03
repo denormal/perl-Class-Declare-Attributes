@@ -1,4 +1,3 @@
-# $Revision: 1515 $
 package Class::Declare::Attributes;
 
 use 5.006;
@@ -11,7 +10,7 @@ use File::Spec::Functions       qw();
 use base qw( Class::Declare        );
 use vars qw( $VERSION $REVISION    );
 
-    $VERSION      = '0.10';
+    $VERSION      = '0.11';
     $REVISION     = '$Revision: 1515 $';
 
 # need to copy the export symbols from Class::Declare
@@ -21,10 +20,19 @@ use vars qw( $VERSION $REVISION    );
 
 
 # declare the 'attributes' helper routines
+{
+  # moving "my" declarations out of BEGIN for Perl v5.8.4
+  #   - this avoids "Bizarre copy of HASH in leavesub" error
+  #   - this is a bug fixed in v5.8.5
+  #   - see http://perlmonks.org/index.pl?node_id=361620 for more details
+  my  %__ATTR__   = ();
+  my  %__PKGS__   = ();
+  my  %__DONE__   = ();
+
 BEGIN {
 
   # define the attributes that are wrapped by this class
-  my  %__ATTR__ = map { $_ => 1 } qw( abstract
+      %__ATTR__ = map { $_ => 1 } qw( abstract
                                       class
                                       restricted
                                       static
@@ -54,8 +62,8 @@ BEGIN {
 
 
   # keep a log of calls made to set the attributes
-  my  %__PKGS__ = ();
-  my  %__DONE__ = ();
+      %__PKGS__ = ();
+      %__DONE__ = ();
 
 
 # MODIFY_CODE_ATTRIBUTES()
@@ -194,6 +202,8 @@ sub __init__
 } # __init__()
 
 } # BEGIN()
+
+} # closure
 
 
 # require()
