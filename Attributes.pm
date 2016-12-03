@@ -10,7 +10,7 @@ use File::Spec::Functions       qw();
 use base qw( Class::Declare        );
 use vars qw( $VERSION $REVISION    );
 
-    $VERSION      = '0.11';
+    $VERSION      = '0.12';
     $REVISION     = '$Revision: 1515 $';
 
 # need to copy the export symbols from Class::Declare
@@ -25,9 +25,9 @@ use vars qw( $VERSION $REVISION    );
   #   - this avoids "Bizarre copy of HASH in leavesub" error
   #   - this is a bug fixed in v5.8.5
   #   - see http://perlmonks.org/index.pl?node_id=361620 for more details
-  my  %__ATTR__   = ();
-  my  %__PKGS__   = ();
-  my  %__DONE__   = ();
+  my  %__ATTR__;
+  my  %__PKGS__;
+  my  %__DONE__;
 
 BEGIN {
 
